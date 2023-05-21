@@ -18,10 +18,10 @@ type Args struct {
 
 func New() (*Args, error) {
 	a := &Args{
-		Filepath:        flag.String("filepath", "", "Path to the config template file"),
-		OutPutFilepath:  flag.String("output_filepath", "", "Path to the out config file"),
-		EnvPrefix:       flag.String("env_prefix", "", "Env prefix"),
-		ErrorOnEmptyEnv: flag.Bool("error_on_empty", false, "Error on an empty env value"),
+		Filepath:        flag.String("filepath", "", "Path to the configuration template file"),
+		OutPutFilepath:  flag.String("output_filepath", "", "Path to the output configuration file"),
+		EnvPrefix:       flag.String("env_prefix", "", "Prefix for the environment variable"),
+		ErrorOnEmptyEnv: flag.Bool("error_on_empty", false, "Returns an error if the environment variable value is empty"),
 	}
 	a.parse()
 	return a, a.err
